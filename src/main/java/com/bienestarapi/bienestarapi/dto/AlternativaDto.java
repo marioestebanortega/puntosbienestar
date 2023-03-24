@@ -1,38 +1,35 @@
-package com.bienestarapi.bienestarapi.entity;
+package com.bienestarapi.bienestarapi.dto;
 
-import javax.persistence.*;
+public class AlternativaDto {
 
-@Entity
-public class Motivacion {
-
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Integer idmotivacion;
-    private String nombre;
+  private long idalternativa;
+  private String nombre;
   private String descripcion;
+  private double puntos;
   private String fechacrea;
   private String usucrea;
   private String fechamodifica;
   private String usumodifica;
 
-  public Motivacion() {
+  public AlternativaDto() {
   }
 
-  public Motivacion(String nombre, String descripcion, double puntos, String fechacrea, String usucrea, String fechamodifica, String usumodifica) {
+  public AlternativaDto(String nombre, String descripcion, double puntos, String fechacrea, String usucrea, String fechamodifica, String usumodifica) {
     this.nombre = nombre;
     this.descripcion = descripcion;
+    this.puntos = puntos;
     this.fechacrea = fechacrea;
     this.usucrea = usucrea;
     this.fechamodifica = fechamodifica;
     this.usumodifica = usumodifica;
   }
 
-  public Integer getIdmotivacion() {
-    return idmotivacion;
+  public long getIdalternativa() {
+    return idalternativa;
   }
 
-  public void setIdmotivacion(Integer idmotivacion) {
-    this.idmotivacion = idmotivacion;
+  public void setIdalternativa(long idalternativa) {
+    this.idalternativa = idalternativa;
   }
 
 
@@ -53,6 +50,14 @@ public class Motivacion {
     this.descripcion = descripcion;
   }
 
+
+  public double getPuntos() {
+    return puntos;
+  }
+
+  public void setPuntos(double puntos) {
+    this.puntos = puntos;
+  }
 
 
   public String getFechacrea() {

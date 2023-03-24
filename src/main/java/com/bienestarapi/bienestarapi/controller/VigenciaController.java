@@ -56,4 +56,15 @@ public class VigenciaController {
             return new ResponseEntity("Ha ocurrido un problema.", HttpStatus.NOT_MODIFIED);
         }
     }
+
+    @GetMapping("/getActual")
+    public ResponseEntity<Vigencia> getActual(){
+
+        try {
+            Optional<Vigencia> vigencia = vigenciaService.getAcutal();
+            return new ResponseEntity(vigencia, HttpStatus.OK);
+        } catch (Exception e){
+            return new ResponseEntity("Ha ocurrido un problema.", HttpStatus.NOT_FOUND);
+        }
+    }
 }

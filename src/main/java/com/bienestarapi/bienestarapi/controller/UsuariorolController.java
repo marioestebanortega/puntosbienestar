@@ -32,19 +32,7 @@ public class UsuariorolController {
         }
     }
 
-    @PostMapping("/create")
-    public ResponseEntity<?> create(@RequestBody UsuariorolDto usuarioroldto){
 
-        try {
-            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
-            Usuariorol Usuariorol = new Usuariorol(usuarioroldto.getIdrol(), usuarioroldto.getIdentificacion(), usuarioroldto.getNombre(),
-                    usuarioroldto.getUsucrea(), dtf.format(LocalDateTime.now()), null, null);
-            usuariorolService.save(Usuariorol);
-            return new ResponseEntity("Creado con éxito.", HttpStatus.OK);
-        } catch (Exception e){
-            return new ResponseEntity("Ha ocurrido un problema.", HttpStatus.NOT_MODIFIED);
-        }
-    }
 
     @GetMapping("/detail/{id}")
     public ResponseEntity<Usuariorol> getByIdusuariorolDetail(@PathVariable("id") Long idusuariorol){

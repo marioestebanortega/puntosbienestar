@@ -6,7 +6,7 @@ import com.bienestarapi.bienestarapi.entity.Motivacion;
 import java.util.Optional;
 
 @Repository
-public interface MotivacionRepository extends JpaRepository<Motivacion, Long>{
+public interface MotivacionRepository extends JpaRepository<Motivacion, Integer>{
 
     Optional<Motivacion> findByIdmotivacion(Long idmotivacion);
     Optional<Motivacion> findByNombre(String nombre);

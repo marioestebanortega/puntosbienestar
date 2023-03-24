@@ -1,68 +1,61 @@
 package com.bienestarapi.bienestarapi.entity;
-import javax.persistence.*;
-import java.sql.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
-public class Vigencia {
+public class Alternativa {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Integer idvigencia;
-  private String vigencia;
-  private String fechaini;
-  private String fechafin;
+  private Integer idalternativa;
+  private String nombre;
+  private String descripcion;
   private String fechacrea;
   private String usucrea;
   private String fechamodifica;
   private String usumodifica;
 
-  public Vigencia() {
+  public Alternativa() {
   }
 
-  public Vigencia(String vigencia, String fechaini, String fechafin, String fechacrea, String usucrea, String fechamodifica, String usumodifica) {
-    this.vigencia = vigencia;
-    this.fechaini = fechaini;
-    this.fechafin = fechafin;
+  public Alternativa(String nombre, String descripcion, double puntos, String fechacrea, String usucrea, String fechamodifica, String usumodifica) {
+    this.nombre = nombre;
+    this.descripcion = descripcion;
     this.fechacrea = fechacrea;
     this.usucrea = usucrea;
     this.fechamodifica = fechamodifica;
     this.usumodifica = usumodifica;
   }
 
-  public Integer getIdvigencia() {
-    return idvigencia;
+  public Integer getIdalternativa() {
+    return idalternativa;
   }
 
-  public void setIdvigencia(Integer idvigencia) {
-    this.idvigencia = idvigencia;
-  }
-
-
-  public String getVigencia() {
-    return vigencia;
-  }
-
-  public void setVigencia(String vigencia) {
-    this.vigencia = vigencia;
+  public void setIdalternativa(Integer idalternativa) {
+    this.idalternativa = idalternativa;
   }
 
 
-  public String getFechaini() {
-    return fechaini;
+  public String getNombre() {
+    return nombre;
   }
 
-  public void setFechaini(String fechaini) {
-    this.fechaini = fechaini;
+  public void setNombre(String nombre) {
+    this.nombre = nombre;
   }
 
 
-  public String getFechafin() {
-    return fechafin;
+  public String getDescripcion() {
+    return descripcion;
   }
 
-  public void setFechafin(String fechafin) {
-    this.fechafin = fechafin;
+  public void setDescripcion(String descripcion) {
+    this.descripcion = descripcion;
   }
+
 
 
   public String getFechacrea() {

@@ -31,6 +31,10 @@ public class VigenciaService {
         return VigenciaRepository.findByVigencia(vigencia);
     }
 
+    public Optional<Vigencia> getAcutal(){
+        return VigenciaRepository.findActual();
+    }
+
     public void save(Vigencia Vigencia){
 
         VigenciaRepository.save(Vigencia);

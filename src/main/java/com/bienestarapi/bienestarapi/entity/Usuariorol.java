@@ -6,45 +6,53 @@ public class Usuariorol {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private long idusuariorol;
-  private long idrol;
+  private Integer idusuariorol;
+  private Integer idrol;
   private String identificacion;
   private String nombre;
   private String usucrea;
   private String fechacrea;
   private String usumodifica;
   private String fechamodifica;
+  private String cargo;
+  private String dependencia;
 
   public Usuariorol() {
   }
 
-  public Usuariorol(long idrol, String identificacion, String nombre, String usucrea, String fechacrea, String usumodifica, String fechamodifica) {
-    this.idrol = idrol;
-    this.identificacion = identificacion;
-    this.nombre = nombre;
-    this.usucrea = usucrea;
-    this.fechacrea = fechacrea;
-    this.usumodifica = usumodifica;
-    this.fechamodifica = fechamodifica;
+
+
+  public String getCargo() {
+    return cargo;
   }
 
-  public long getIdusuariorol() {
+  public void setCargo(String cargo) {
+    this.cargo = cargo;
+  }
+
+  public String getDependencia() {
+    return dependencia;
+  }
+
+  public void setDependencia(String dependencia) {
+    this.dependencia = dependencia;
+  }
+
+  public Integer getIdusuariorol() {
     return idusuariorol;
   }
 
-  public void setIdusuariorol(long idusuariorol) {
+  public void setIdusuariorol(Integer idusuariorol) {
     this.idusuariorol = idusuariorol;
   }
 
-
-  public long getIdrol() {
+  public Integer getIdrol() {
     return idrol;
   }
 
-  public void setIdrol(long idrol) {
+  public void setIdrol(Integer idrol) {
     this.idrol = idrol;
   }
-
 
   public String getIdentificacion() {
     return identificacion;

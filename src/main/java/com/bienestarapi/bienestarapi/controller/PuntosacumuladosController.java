@@ -1,5 +1,6 @@
 package com.bienestarapi.bienestarapi.controller;
 import com.bienestarapi.bienestarapi.dto.PuntosacumuladosDto;
+import com.bienestarapi.bienestarapi.entity.Permiso;
 import com.bienestarapi.bienestarapi.entity.Puntosacumulados;
 import com.bienestarapi.bienestarapi.service.PuntosacumuladosService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,6 +47,8 @@ public class PuntosacumuladosController {
             return new ResponseEntity("Ha ocurrido un problema.", HttpStatus.NOT_MODIFIED);
         }
     }
+
+
 
     @GetMapping("/detail/{id}")
     public ResponseEntity<Puntosacumulados> getByIdpuntosacumuladosDetail(@PathVariable("id") Long idpuntosacumulados){

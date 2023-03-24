@@ -1,1 +1,7 @@
 sudo /usr/local/mysql/support-files/mysql.server start
+cd /opt/homebrew/Cellar/mysql@5.
+mysql@5.7/5.7.41/bin/mysql_secure_installation
+mysql -u root -p
+GRANT ALL ON *.* TO 'root'@'localhost' IDENTIFIED BY 'America86' WITH GRANT OPTION;
+SELECT @@datadir, @@innodb_data_home_dir
+/opt/homebrew/bin/pinentry-mac
