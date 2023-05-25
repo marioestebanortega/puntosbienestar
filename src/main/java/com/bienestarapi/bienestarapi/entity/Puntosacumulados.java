@@ -1,6 +1,7 @@
 package com.bienestarapi.bienestarapi.entity;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 public class Puntosacumulados {
@@ -10,25 +11,19 @@ public class Puntosacumulados {
   private long idpuntosacumulados;
   private String identificacion;
   private long idvigencia;
-  private long idmotivacion;
-  private String motivacion;
-  private double puntos;
-  private String fecharadica;
-  private String fechacrea;
+  private Double puntos;
+  private Date fechacrea;
   private String usucrea;
-  private String fechamodifica;
+  private Date fechamodifica;
   private String usumodifica;
 
   public Puntosacumulados() {
   }
 
-  public Puntosacumulados(String identificacion, long idvigencia, long idmotivacion, String motivacion, double puntos, String fecharadica, String fechacrea, String usucrea, String fechamodifica, String usumodifica) {
+  public Puntosacumulados(String identificacion, long idvigencia, long idmotivacion, String motivacion, double puntos, String fecharadica, Date fechacrea, String usucrea, Date fechamodifica, String usumodifica) {
     this.identificacion = identificacion;
     this.idvigencia = idvigencia;
-    this.idmotivacion = idmotivacion;
-    this.motivacion = motivacion;
     this.puntos = puntos;
-    this.fecharadica = fecharadica;
     this.fechacrea = fechacrea;
     this.usucrea = usucrea;
     this.fechamodifica = fechamodifica;
@@ -62,47 +57,23 @@ public class Puntosacumulados {
   }
 
 
-  public long getIdmotivacion() {
-    return idmotivacion;
-  }
 
-  public void setIdmotivacion(long idmotivacion) {
-    this.idmotivacion = idmotivacion;
-  }
-
-
-  public String getMotivacion() {
-    return motivacion;
-  }
-
-  public void setMotivacion(String motivacion) {
-    this.motivacion = motivacion;
-  }
-
-
-  public double getPuntos() {
+  public Double getPuntos() {
     return puntos;
   }
 
-  public void setPuntos(double puntos) {
+  public void setPuntos(Double puntos) {
     this.puntos = puntos;
   }
 
 
-  public String getFecharadica() {
-    return fecharadica;
-  }
-
-  public void setFecharadica(String fecharadica) {
-    this.fecharadica = fecharadica;
-  }
 
 
-  public String getFechacrea() {
+  public Date getFechacrea() {
     return fechacrea;
   }
 
-  public void setFechacrea(String fechacrea) {
+  public void setFechacrea(Date fechacrea) {
     this.fechacrea = fechacrea;
   }
 
@@ -116,11 +87,11 @@ public class Puntosacumulados {
   }
 
 
-  public String getFechamodifica() {
+  public Date getFechamodifica() {
     return fechamodifica;
   }
 
-  public void setFechamodifica(String fechamodifica) {
+  public void setFechamodifica(Date fechamodifica) {
     this.fechamodifica = fechamodifica;
   }
 

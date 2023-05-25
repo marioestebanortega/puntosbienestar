@@ -8,8 +8,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -40,7 +42,7 @@ public class PuntosacumuladosController {
             DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
             Puntosacumulados Puntosacumulados = new Puntosacumulados(puntosacumuladosdto.getIdentificacion(), puntosacumuladosdto.getIdvigencia(), puntosacumuladosdto.getIdmotivacion(),
                     puntosacumuladosdto.getMotivacion(),puntosacumuladosdto.getPuntos(), puntosacumuladosdto.getFecharadica(),
-                    dtf.format(LocalDateTime.now()),puntosacumuladosdto.getUsucrea(), null, null);
+                    new Date(),puntosacumuladosdto.getUsucrea(), null, null);
             puntosacumuladosService.save(Puntosacumulados);
             return new ResponseEntity("Creado con éxito.", HttpStatus.OK);
         } catch (Exception e){
@@ -60,4 +62,18 @@ public class PuntosacumuladosController {
             return new ResponseEntity("Ha ocurrido un problema.", HttpStatus.NOT_MODIFIED);
         }
     }
+
+    @GetMapping("/obtenerPuntosAcumulados/{cedula}")
+    public ResponseEntity<Double> obtenerPuntosAcumulados(@PathVariable("cedula") String cedula){
+
+        try {
+            BigDecimal puntos = puntosacumuladosService.obtenerPuntosAcumulados(cedula);
+            return new ResponseEntity(puntos.doubleValue(), HttpStatus.OK);
+        } catch (Exception e){
+            return new ResponseEntity("Ha ocurrido un problema.", HttpStatus.NOT_MODIFIED);
+        }
+    }
+
+
+
 }

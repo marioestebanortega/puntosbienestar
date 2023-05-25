@@ -2,10 +2,10 @@ package com.bienestarapi.bienestarapi.dto;
 
 public class PermisoDto {
 
-  private long idpermiso;
+  private Integer idpermiso;
   private String identificacion;
-  private long idvigencia;
-  private long idtipopermiso;
+  private Integer idvigencia;
+  private Integer idtipopermiso;
   private String fecharadicacion;
   private String fechaini;
   private String fechafin;
@@ -20,12 +20,12 @@ public class PermisoDto {
   private String usumodifica;
   private String fechamodifica;
 
-  private long idestadopermiso;
+  private Integer idestadopermiso;
 
   public PermisoDto() {
   }
 
-  public PermisoDto(String identificacion, long idvigencia, long idtipopermiso, String fecharadicacion, String fechaini, String fechafin, String horaini, String horafin, String observacion, String acedemico, String jefe, String director, String usucrea, String fechacrea, String usumodifica, String fechamodifica, long idestadopermiso) {
+  public PermisoDto(String identificacion, Integer idvigencia, Integer idtipopermiso, String fecharadicacion, String fechaini, String fechafin, String horaini, String horafin, String observacion, String acedemico, String jefe, String director, String usucrea, String fechacrea, String usumodifica, String fechamodifica, Integer idestadopermiso) {
     this.identificacion = identificacion;
     this.idvigencia = idvigencia;
     this.idtipopermiso = idtipopermiso;
@@ -45,11 +45,11 @@ public class PermisoDto {
     this.idestadopermiso = idestadopermiso;
   }
 
-  public long getIdpermiso() {
+  public Integer getIdpermiso() {
     return idpermiso;
   }
 
-  public void setIdpermiso(long idpermiso) {
+  public void setIdpermiso(Integer idpermiso) {
     this.idpermiso = idpermiso;
   }
 
@@ -63,20 +63,20 @@ public class PermisoDto {
   }
 
 
-  public long getIdvigencia() {
+  public Integer getIdvigencia() {
     return idvigencia;
   }
 
-  public void setIdvigencia(long idvigencia) {
+  public void setIdvigencia(Integer idvigencia) {
     this.idvigencia = idvigencia;
   }
 
 
-  public long getIdtipopermiso() {
+  public Integer getIdtipopermiso() {
     return idtipopermiso;
   }
 
-  public void setIdtipopermiso(long idtipopermiso) {
+  public void setIdtipopermiso(Integer idtipopermiso) {
     this.idtipopermiso = idtipopermiso;
   }
 
@@ -197,11 +197,11 @@ public class PermisoDto {
     this.fechamodifica = fechamodifica;
   }
 
-  public long getIdestadopermiso() {
+  public Integer getIdestadopermiso() {
     return idestadopermiso;
   }
 
-  public void setIdestadopermiso(long idestadopermiso) {
+  public void setIdestadopermiso(Integer idestadopermiso) {
     this.idestadopermiso = idestadopermiso;
   }
 }

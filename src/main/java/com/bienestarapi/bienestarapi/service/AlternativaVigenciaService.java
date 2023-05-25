@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -24,8 +25,13 @@ public class AlternativaVigenciaService {
     @Autowired
     private AlternativaRepository alternativaRepository;
 
+
     @Autowired
     private VigenciaRepository vigenciaRepository;
+
+    public AlternativaVigencia  getAlternativaVigenciaPorId(Integer id){
+        return alternativaVigenciaRepository.getById(id);
+    }
 
 
 

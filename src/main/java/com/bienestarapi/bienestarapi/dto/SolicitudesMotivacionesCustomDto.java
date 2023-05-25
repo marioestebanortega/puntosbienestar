@@ -15,6 +15,16 @@ public class SolicitudesMotivacionesCustomDto {
     private String esDisposicion;
     private String nombreFuncionario;
     private String cargo;
+    private String estado;
+    private Integer idEstado;
+
+    public Integer getIdEstado() {
+        return idEstado;
+    }
+
+    public void setIdEstado(Integer idEstado) {
+        this.idEstado = idEstado;
+    }
 
     public String getNombreFuncionario() {
         return nombreFuncionario;
@@ -94,6 +104,14 @@ public class SolicitudesMotivacionesCustomDto {
 
     public void setEsDisposicion(String esDisposicion) {
         this.esDisposicion = esDisposicion;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
 

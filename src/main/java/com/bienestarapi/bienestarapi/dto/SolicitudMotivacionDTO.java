@@ -20,6 +20,7 @@ public class SolicitudMotivacionDTO {
     private Integer motivacionVigenciaId;
     private Integer vigenciaId;
     private String id;
+    private Integer idEstado;
 
     public Double getValor() {
         return valor;
@@ -101,6 +102,14 @@ public class SolicitudMotivacionDTO {
         this.id = id;
     }
 
+    public Integer getIdEstado() {
+        return idEstado;
+    }
+
+    public void setIdEstado(Integer idEstado) {
+        this.idEstado = idEstado;
+    }
+
 
     public static SolicitudMotivacionDTO fromSolicitudMotivacion(SolicitudMotivacion solicitudMotivacion) {
         SolicitudMotivacionDTO solicitudMotivacionDTO = new SolicitudMotivacionDTO();
@@ -111,6 +120,7 @@ public class SolicitudMotivacionDTO {
         solicitudMotivacionDTO.setNombreFuncionario(solicitudMotivacion.getNombreFuncionario());
         solicitudMotivacionDTO.setDependencia(solicitudMotivacion.getDependencia());
         solicitudMotivacionDTO.setCargo(solicitudMotivacion.getCargo());
+        if(solicitudMotivacion.getIdEstado()!=null)solicitudMotivacionDTO.setIdEstado(solicitudMotivacion.getIdEstado().getValor());
         return solicitudMotivacionDTO;
     }
 
@@ -140,6 +150,7 @@ public class SolicitudMotivacionDTO {
         MotivacionVigencia mv=new MotivacionVigencia();
         mv.setId(solicitudMotivacionDTO.getMotivacionVigenciaId());
         solicitudMotivacion.setMotivacionVigencia(mv);
+        if(solicitudMotivacionDTO.getIdEstado()!=null)solicitudMotivacion.setIdEstado(EstadoPuntos.fromValor(solicitudMotivacionDTO.getIdEstado()));
         return solicitudMotivacion;
     }
 

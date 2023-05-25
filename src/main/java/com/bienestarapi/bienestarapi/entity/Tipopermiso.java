@@ -9,7 +9,7 @@ public class Tipopermiso {
   private long idtipopermiso;
   private String nombre;
   private String descripcion;
-  private double puntos;
+  private Double puntos;
   private String fechacrea;
   private String usucrea;
   private String fechamodifica;
@@ -55,11 +55,11 @@ public class Tipopermiso {
   }
 
 
-  public double getPuntos() {
+  public Double getPuntos() {
     return puntos;
   }
 
-  public void setPuntos(double puntos) {
+  public void setPuntos(Double puntos) {
     this.puntos = puntos;
   }
 

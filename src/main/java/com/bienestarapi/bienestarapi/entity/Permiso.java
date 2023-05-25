@@ -27,6 +27,26 @@ public class Permiso {
 
   private Integer idestadopermiso;
 
+  public Permiso(String identificacion, Integer idvigencia, Integer idtipopermiso, String fecharadicacion, String fechaini, String fechafin, String horaini, String horafin, String observacion, String acedemico, String jefe, String director, String usucrea, String fechacrea, String usumodifica, String fechamodifica, Integer idestadopermiso) {
+    this.identificacion = identificacion;
+    this.idvigencia = idvigencia;
+    this.idtipopermiso = idtipopermiso;
+    this.fecharadicacion = fecharadicacion;
+    this.fechaini = fechaini;
+    this.fechafin = fechafin;
+    this.horaini = horaini;
+    this.horafin = horafin;
+    this.observacion = observacion;
+    this.acedemico = acedemico;
+    this.jefe = jefe;
+    this.director = director;
+    this.usucrea = usucrea;
+    this.fechacrea = fechacrea;
+    this.usumodifica = usumodifica;
+    this.fechamodifica = fechamodifica;
+    this.idestadopermiso = idestadopermiso;
+  }
+
   public Permiso() {
   }
 

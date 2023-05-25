@@ -74,6 +74,21 @@ public class MotivacionController {
             SolicitudMotivacionDTO smDto= solicitudMotivacionService.guardarSolicitudMotivacion(solicitudMotivacionDTO);
             return new ResponseEntity(smDto, HttpStatus.OK);
         } catch (Exception e){
+            e.printStackTrace();
+            return new ResponseEntity("Ha ocurrido un problema.", HttpStatus.NOT_MODIFIED);
+        }
+
+    }
+
+
+
+    @PostMapping("/actualizarEstado")
+    public ResponseEntity<SolicitudesMotivacionesCustomDto> actualizarEstado(@RequestBody PuntosIn puntosIn) {
+        try {
+            SolicitudesMotivacionesCustomDto smOut=solicitudMotivacionService.actualizarEstado(puntosIn.getId(),puntosIn.getIdEstado());
+            return new ResponseEntity(smOut, HttpStatus.OK);
+        } catch (Exception e){
+            e.printStackTrace();
             return new ResponseEntity("Ha ocurrido un problema.", HttpStatus.NOT_MODIFIED);
         }
 

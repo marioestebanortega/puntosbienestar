@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 
@@ -30,11 +31,11 @@ public class PuntosacumuladosService {
 
         return PuntosacumuladosRepository.findByIdentificacion(identificacion);
     }
+    public Optional<Puntosacumulados> getByIdentificacionAndVigencia(String identificacion,Long idVigencia){
 
-    public Optional<Puntosacumulados> getByFecharadica(String fecharadica){
-
-        return PuntosacumuladosRepository.findByFecharadica(fecharadica);
+        return PuntosacumuladosRepository.findByIdentificacionAndIdvigencia(identificacion,idVigencia);
     }
+
 
     public Optional<Puntosacumulados> getByIdvigencia(Long idvigencia){
 
@@ -45,4 +46,10 @@ public class PuntosacumuladosService {
 
         PuntosacumuladosRepository.save(Puntosacumulados);
     }
+
+    public BigDecimal obtenerPuntosAcumulados(String cedula){
+        return PuntosacumuladosRepository.obtenerPuntosAcumulados(cedula);
+    }
+
+
 }

@@ -1,5 +1,7 @@
 package com.bienestarapi.bienestarapi.entity;
 
+import com.bienestarapi.bienestarapi.dto.EstadoPuntos;
+
 import javax.persistence.*;
 import java.sql.Date;
 
@@ -41,6 +43,9 @@ public class SolicitudMotivacion {
 
     @Column(name = "valor")
     private Double valor;
+
+    @Column(name = "id_estado")
+    private EstadoPuntos idEstado;
 
 
     public Double getValor() {
@@ -122,5 +127,13 @@ public class SolicitudMotivacion {
 
     public void setVigencia(Vigencia vigencia) {
         this.vigencia = vigencia;
+    }
+
+    public EstadoPuntos getIdEstado() {
+        return idEstado;
+    }
+
+    public void setIdEstado(EstadoPuntos idEstado) {
+        this.idEstado = idEstado;
     }
 }
